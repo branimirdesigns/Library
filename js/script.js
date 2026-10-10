@@ -46,7 +46,7 @@ function createBookCard(book) {
   actions.classList.add("card-actions");
 
   const readBtn = document.createElement("button");
-  readBtn.classList.add("read-toggle");
+  readBtn.classList.add("btn-ghost", "read-toggle");
   readBtn.textContent = book.read ? "Read" : "Not read";
   readBtn.addEventListener("click", () => {
     book.toggleReadStatus();
@@ -54,7 +54,7 @@ function createBookCard(book) {
   });
 
   const removeBtn = document.createElement("button");
-  removeBtn.classList.add("remove-btn");
+  removeBtn.classList.add("btn-ghost", "remove-btn");
   removeBtn.textContent = "Remove";
   removeBtn.addEventListener("click", () => {
     removeBookFromLibrary(book.id);
