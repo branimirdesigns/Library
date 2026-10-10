@@ -1,12 +1,14 @@
 :root {
-  --color-bg: #000000;
-  --color-surface: #111113;
-  --color-surface-raised: #1a1a1d;
-  --color-border: #2a2a2e;
-  --color-text: #f2f2f2;
-  --color-muted: #8a8a8f;
-  --color-accent: #ffffff;
-  --color-danger: #ff5c5c;
+  --color-bg: #0a0a0b;
+  --color-surface: #141415;
+  --color-surface-raised: #1c1c1e;
+  --color-border: #232325;
+  --color-border-hover: #333335;
+  --color-text: #e4e4e5;
+  --color-text-dim: #b4b4b6;
+  --color-muted: #78787c;
+  --color-accent: #f5f5f5;
+  --color-danger: #e5736f;
   --radius-lg: 20px;
   --radius-md: 14px;
   --radius-pill: 999px;
@@ -34,8 +36,9 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-text-dim);
   letter-spacing: -0.01em;
 }
 
@@ -48,16 +51,16 @@ button {
 
 #new-book-btn {
   background: var(--color-accent);
-  color: #000;
+  color: #0a0a0b;
   font-weight: 600;
-  font-size: 0.9rem;
-  padding: 0.6rem 1.25rem;
+  font-size: 0.875rem;
+  padding: 0.55rem 1.1rem;
   border-radius: var(--radius-pill);
   transition: opacity 0.15s ease;
 }
 
 #new-book-btn:hover {
-  opacity: 0.85;
+  opacity: 0.88;
 }
 
 main {
@@ -84,18 +87,19 @@ main {
 }
 
 .book-card:hover {
-  border-color: #3a3a3f;
+  border-color: var(--color-border-hover);
 }
 
 .book-card h3 {
   margin: 0;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.01em;
+  color: var(--color-text);
 }
 
 .book-card .author {
-  color: var(--color-muted);
+  color: var(--color-text-dim);
   font-size: 0.875rem;
   margin: 0;
 }
@@ -126,29 +130,31 @@ main {
 }
 
 .read-toggle:hover {
-  border-color: #46464c;
+  border-color: var(--color-border-hover);
+  color: var(--color-text-dim);
 }
 
 .book-card.read .read-toggle {
-  background: var(--color-accent);
-  color: #000;
-  border-color: var(--color-accent);
+  background: rgba(245, 245, 245, 0.08);
+  color: var(--color-text);
+  border-color: rgba(245, 245, 245, 0.16);
 }
 
 .remove-btn {
   background: transparent;
-  color: var(--color-danger);
+  color: var(--color-muted);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-pill);
   padding: 0.45rem 0.9rem;
   font-size: 0.8rem;
   font-weight: 500;
-  transition: border-color 0.15s ease, background 0.15s ease;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
 }
 
 .remove-btn:hover {
   border-color: var(--color-danger);
-  background: rgba(255, 92, 92, 0.08);
+  background: rgba(229, 115, 111, 0.08);
+  color: var(--color-danger);
 }
 
 /* Dialog / form */
@@ -175,27 +181,29 @@ dialog::backdrop {
 
 .dialog-header h2 {
   margin: 0;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--color-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-dim);
 }
 
 .icon-btn {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   border: 1px solid var(--color-border);
-  background: var(--color-surface-raised);
-  color: var(--color-text);
+  background: transparent;
+  color: var(--color-muted);
   font-size: 1.1rem;
   line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: border-color 0.15s ease, color 0.15s ease;
 }
 
 .icon-btn:hover {
-  border-color: #46464c;
+  border-color: var(--color-border-hover);
+  color: var(--color-text);
 }
 
 #book-form {
@@ -227,7 +235,7 @@ dialog::backdrop {
 #book-form input[type="text"]:focus,
 #book-form input[type="number"]:focus {
   outline: none;
-  border-color: #52525a;
+  border-color: var(--color-border-hover);
 }
 
 .checkbox-label {
@@ -248,15 +256,15 @@ dialog::backdrop {
 
 .primary-btn {
   background: var(--color-accent);
-  color: #000;
+  color: #0a0a0b;
   font-weight: 600;
   font-size: 0.9rem;
-  padding: 0.85rem 1rem;
+  padding: 0.8rem 1rem;
   border-radius: var(--radius-pill);
   margin-top: 0.25rem;
   transition: opacity 0.15s ease;
 }
 
 .primary-btn:hover {
-  opacity: 0.85;
+  opacity: 0.88;
 }
