@@ -1,0 +1,177 @@
+:root {
+  --color-bg: #f4f1ea;
+  --color-surface: #ffffff;
+  --color-text: #2b2b2b;
+  --color-muted: #6b6b6b;
+  --color-accent: #3a5a40;
+  --color-accent-dark: #2c4530;
+  --color-danger: #a4303f;
+  --color-border: #ddd8cc;
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Georgia", "Times New Roman", serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  background: var(--color-accent);
+  color: #fff;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+}
+
+#new-book-btn {
+  background: #fff;
+  color: var(--color-accent-dark);
+  font-weight: bold;
+}
+
+#new-book-btn:hover {
+  background: #eee;
+}
+
+main {
+  padding: 2rem;
+}
+
+#book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.book-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.book-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.book-card .author {
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+.book-card .pages {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.book-card .card-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.read-toggle {
+  flex: 1;
+  background: var(--color-border);
+  color: var(--color-text);
+}
+
+.book-card.read .read-toggle {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.remove-btn {
+  background: var(--color-danger);
+  color: #fff;
+}
+
+.remove-btn:hover {
+  background: #80222e;
+}
+
+/* Dialog / form */
+dialog {
+  border: none;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  width: min(90vw, 380px);
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+#book-form h2 {
+  margin: 0 0 0.5rem 0;
+}
+
+#book-form label {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+#book-form input[type="text"],
+#book-form input[type="number"] {
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: normal;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+#cancel-btn {
+  background: var(--color-border);
+}
+
+.form-actions button[type="submit"] {
+  background: var(--color-accent);
+  color: #fff;
+}
